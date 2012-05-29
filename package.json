@@ -1,0 +1,29 @@
+{
+  "name": "text-toggle",
+  "title": "Text Toggle",
+  "description": "A script allowing readers to toggle between two versions of a text.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jsvine/text-toggle",
+  "author": {
+    "name": "Jeremy Singer-Vine",
+    "email": "jsvine@gmail.com",
+    "url": "http://www.jsvine.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jsvine/text-toggle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jsvine/text-toggle/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jsvine/text-toggle/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~1.7"
+  },
+  "keywords": []
+}
