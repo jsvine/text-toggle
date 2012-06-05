@@ -1,7 +1,7 @@
 {
   "name": "text-toggle",
   "title": "Text Toggle",
-  "description": "A script allowing readers to toggle between two versions of a text.",
+  "description": "A script for allowing readers to toggle between two versions of a text.",
   "version": "0.1.0",
   "homepage": "https://github.com/jsvine/text-toggle",
   "author": {

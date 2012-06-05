@@ -1,0 +1,54 @@
+body {
+	font-size: 10px;
+	color: #333;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 600px;
+	margin: 0 auto;
+}
+.examples {
+	font-size: 1.5em;
+}
+
+#gist_result {
+	padding: 0.25em 0.5em;
+	margin: 0.5em 0;
+	border: 1px solid #999;
+}
+
+#gist_result p {
+	padding: 0.25em 0;
+	margin: 0;
+}
+
+.example_top {
+	background: #EEE;
+	border-top: 2px solid #333;
+	overflow: auto;
+	padding: 5px 10px;
+}
+
+.example_hed {
+	float: left;
+	font-size: 2em;	
+	font-weight: bold;
+	line-height: 30px;
+}
+
+.example_dek {
+	float: left;
+	font-size: 1.2em;
+	line-height: 30px;
+	margin-left: 1em;
+	position: relative;
+	top: 0.25em;
+}
+
+.example_code {
+	background: #EEE;
+	font-size: 1.2em;
+	padding: 1em;
+	margin-top: 1em;
+}
+.example_code code {
+	white-space: pre-wrap;	
+}

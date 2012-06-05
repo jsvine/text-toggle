@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+	<title>Text-Toggle Example</title>
+	<link rel="stylesheet" href="../text-toggle.css">
+	<link rel="stylesheet" href="chosen.css">
+	<link rel="stylesheet" href="example.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="chosen.jquery.min.js"></script>
+	<script src="jquery.intelligist.min.js"></script>
+	<script src="../text-toggle.js"></script>
+</head>
+<body>
+	<h1>Text Toggle Examples</h1>
+	<div class="examples">
+		<div id="gist_result"></div>
+		<div id="gist_selector"></div>
+		<script>
+			$gist_result = $("#gist_result");
+			$gist_selector = $("#gist_selector");
+			$gist_selector.intelligist({
+				"6b338b76b8319a5fb815": "Basic Demo",
+				"c7a6e0958d2c4ef74fa3": "Nesting Demo",
+				"7c7dc38ff05bbb768ccf": "JSON Demo"
+			}, { 
+				exec: true,
+				before: function () {
+					$gist_result.empty();
+				},
+				after: function () {
+					var $sandbox = $gist_selector.children().last();
+					var $gist = $sandbox.children();
+					$gist_result.append($gist);
+				}
+			});	
+		</script>
+	</div>
+</body>

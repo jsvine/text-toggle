@@ -1,0 +1,37 @@
+.text_toggle_container {
+}
+
+.text_toggle {
+  padding: 0 0.25em;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text_toggle_off {
+  display: none;  
+}
+
+del.text_toggle {
+  background: #FCC;
+}
+
+ins.text_toggle {
+  background: #CFC;
+}
+
+ins.text_toggle ins.text_toggle {
+  background: #ADA;
+}
+
+del.text_toggle del.text_toggle {
+  background: #DAA;
+}
+
+ins.text_toggle ins.text_toggle ins.text_toggle {
+  background: #8B8;
+}
+
+del.text_toggle del.text_toggle del.text_toggle {
+  background: #B88;
+}
+
