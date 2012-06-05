@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Text Toggle : Let readers toggle between two versions of a text." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Text Toggle</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jsvine/text-toggle">View on GitHub</a>
+
+          <h1 id="project_title">Text Toggle</h1>
+          <h2 id="project_tagline">Let readers toggle between two versions of a text.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jsvine/text-toggle/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jsvine/text-toggle/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Text Toggle 0.1.0</h1>
+
+<h2>About</h2>
+
+<p>Text Toggle is a reincarnation of <a href="http://slate.com">Slate Magazine</a>'s <a href="http://labs.slate.com/articles/plain-english/">"Plain English"</a>, a script that lets readers toggle between two versions of a text. The fine folks at Slate, my former employer, have given me permission to open-source the project. Text Toggle is a complete rewriting of Plain English, but retains its spirit.</p>
+
+<h2>Dependencies</h2>
+
+<p>TextToggle currently requires jQuery 1.7+.</p>
+
+<h2>Usage</h2>
+
+<p>If you're curious, you can read the <a href="http://jsvine.github.com/text-toggle/docs/text-toggle.html">annotated source code</a>.</p>
+
+<p>To use Text Toggle on a web page, you'll need to include the Javascript and CSS files:</p>
+
+<pre><code>&lt;link rel="stylesheet" href="text-toggle.css"/&gt;
+&lt;script src="text-toggle.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Then, you can generate a Text Toggle in two ways: from live HTML, or from a JSON object. The result of each is essentially the same. See the examples below, or view <a href="http://jsvine.github.com/text-toggle/examples/">interactive versions here</a>.</p>
+
+<h3>Via Live HTML</h3>
+
+<pre><code>&lt;div id="example"&gt;
+    I would like a pet &lt;del&gt;Eublepharis macularius&lt;/del&gt;&lt;ins&gt;leopard gecko&lt;/ins&gt;.
+&lt;/div&gt;
+&lt;script&gt;
+    var t = new TextToggle(document.getElementById("example"))
+&lt;/script&gt;
+</code></pre>
+
+<p>As you can see, Text Toggle depends on the semantic <code>&lt;ins&gt;</code> and <code>&lt;del&gt;</code> tags. They can be nested ad inifintum: </p>
+
+<pre><code>&lt;div id="example"&gt;
+    I would like a &lt;del&gt;pet&lt;/del&gt;&lt;ins&gt;pet, specifically a &lt;del&gt;Eublepharis macularius&lt;/del&gt;&lt;ins&gt;leopard gecko&lt;/ins&gt;&lt;/ins&gt;.
+&lt;/div&gt;
+&lt;script&gt;
+    var t = new TextToggle($("#example"))
+&lt;/script&gt;
+</code></pre>
+
+<p>As shown above, you can pass the <code>TextToggle</code> constructor either a plain HTML element or a jQuery-wrapped one.</p>
+
+<h3>Via JSON</h3>
+
+<pre><code>&lt;div id="example"&gt;&lt;/div&gt;
+&lt;script&gt;
+    var json = [
+        "I would like a ",
+        [ "pet", [
+            "pet, specifically a ",
+            [ "Eublepharis macularius", "leopard gecko" ]
+        ]],
+        "."
+    ];
+    var t = new TextToggle.fromJSON(json);
+    $("#example").html(t.$el);
+&lt;/script&gt;
+</code></pre>
+
+<p>The code above will produce the same functionality as the second HTML-derived example. Text Toggle expects a very particular JSON structure:</p>
+
+<pre><code>[
+    "Plain, non-substituting sections go in strings. ",
+    [ "Something to toggle out", "Something to toggle in" ],
+    " more plain text. ",
+    [ "You can created nested toggles.", [
+        "Nested toggles work",
+        [ " just the same", " similarly" ],
+        "."
+    ]]
+]
+</code></pre>
+
+<h2>API</h2>
+
+<p>All <code>TextToggle</code> objects have the following public methods:</p>
+
+<ul>
+<li><p>TextToggle.<strong>translate()</strong>: Hides all <code>&lt;del&gt;</code>s, shows all <code>&lt;ins&gt;</code>es.</p></li>
+<li><p>TextToggle.<strong>reset()</strong>: The opposite. Resets the TextToggle to its initial state by showing all <code>&lt;del&gt;</code>s and hiding all <code>&lt;ins&gt;</code>es.</p></li>
+</ul><p>You might want to add these methods as click-handlers to HTML buttons.</p>
+
+<h2>To-Do</h2>
+
+<ul>
+<li><p>Create a test suite.</p></li>
+<li><p>Test on Internet Explorer 6, 7, 8, 9.</p></li>
+<li><p>Wean script off of its jQuery dependency.</p></li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Text Toggle maintained by <a href="https://github.com/jsvine">jsvine</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
